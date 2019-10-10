@@ -1,12 +1,22 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
 
+const faceRotating = keyframes`
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+`;
 const Face = styled.div`
   position: relative;
   width: 30px;
   height: 30px;
   border: 5px solid #000;
   border-radius: 50%;
+  animation: ${faceRotating} 2s linear infinite;
 `;
 
 const Eye = styled.div`
