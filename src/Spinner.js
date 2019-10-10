@@ -39,7 +39,7 @@ const Mouse = styled.div`
   left: 6px;
 `;
 
-export default function SpinnerFace() {
+export function SpinnerFace() {
   return (
     <Face>
       <Eye style={{ position: "absolute", top: "7px", left: "5px" }} />
