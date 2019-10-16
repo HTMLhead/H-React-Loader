@@ -38,6 +38,29 @@ const Square = styled.div`
   width: 50px;
   height: 50px;
 `;
+
+const ChildrenStyle = styled.div`
+  z-index: 900;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  width: 30px;
+  height: 30px;
+`;
+
+const ChildrenContainer = styled.div`
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+`;
+
 export function DynamicRotate({ children }) {
-  return <Square>{children}</Square>;
+  return (
+    <ChildrenContainer style={{ position: "relative", display: "inline-block" }}>
+      <ChildrenStyle>{children}</ChildrenStyle>
+      <Square />
+    </ChildrenContainer>
+  );
 }
