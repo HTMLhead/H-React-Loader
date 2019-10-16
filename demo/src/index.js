@@ -9,7 +9,7 @@ class Demo extends Component {
     return (
       <div>
         <h1>h-react-loader Demo</h1>
-        <DynamicRotate />
+        <DynamicRotate>하위</DynamicRotate>
         <SpinnerFace />
       </div>
     );
