@@ -47,6 +47,7 @@ const ChildrenStyle = styled.div`
   transform: translateY(-50%) translateX(-50%);
   width: 30px;
   height: 30px;
+  overflow: hidden;
 `;
 
 const ChildrenContainer = styled.div`
@@ -56,11 +57,16 @@ const ChildrenContainer = styled.div`
   height: 50px;
 `;
 
-export function DynamicRotate({ children }) {
+export function DynamicRotate({ children, style }) {
+  if (!style) {
+    style = {};
+  }
   return (
-    <ChildrenContainer style={{ position: "relative", display: "inline-block" }}>
-      <ChildrenStyle>{children}</ChildrenStyle>
-      <Square />
+    <ChildrenContainer style={{ width: style.width, height: style.height }}>
+      <ChildrenStyle style={{ width: style.innerWidth, height: style.innerHeight }}>
+        {children}
+      </ChildrenStyle>
+      <Square style={{ width: style.width, height: style.height }} />
     </ChildrenContainer>
   );
 }
