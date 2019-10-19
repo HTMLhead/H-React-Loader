@@ -6,10 +6,18 @@ import { DynamicRotate } from "../../src/DynamicSpinner";
 
 class Demo extends Component {
   render() {
+    const styleObj = {
+      innerWidth: "40px",
+      innerHeight: "40px",
+      width: "70px",
+      height: "70px",
+    };
     return (
       <div>
         <h1>h-react-loader Demo</h1>
-        <DynamicRotate>하위</DynamicRotate>
+        <DynamicRotate style={styleObj}>
+          <SpinnerFace />
+        </DynamicRotate>
         <SpinnerFace />
       </div>
     );
